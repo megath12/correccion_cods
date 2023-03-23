@@ -1,9 +1,11 @@
-var formulario = document.querySelector("#form")
+
+
+var formulario = document.querySelector(".formulario")
 
 formulario.onsubmit = function(e) {
 
-  e.prevent();
-  
+  e.prevenDefault();
+  //e.prevent 
   var n = formulario.elements[0]
   var e = formulario.elements[1]
   var na = formulario.elements[2]
@@ -19,7 +21,8 @@ formulario.onsubmit = function(e) {
   if (nombre.length === 0) {
     n.classList.add("error")
   }
-  if (edad < 18 || edad > 120) {
+  if (edad <= 18 || edad > 120) {
+    // modificar rango de edad
     e.classList.add("error")
   }
 
@@ -55,7 +58,8 @@ function agregarInvitado(nombre, edad, nacionalidad) {
 var lista = document.getElementById("lista-de-invitados")
 
 var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
+elementoLista.classList.add("lista-de-invitados")
+//venia added, solo add
 lista.appendChild(elementoLista)
 
 var spanNombre = document.createElement("span")
@@ -95,3 +99,8 @@ elementoLista.appendChild(botonBorrar);
 botonBorrar.parentNode.remove()
   }
 }
+
+
+
+
+
